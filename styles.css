@@ -5,8 +5,15 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #120720;
+    background-image:
+        radial-gradient(900px 600px at 15% 20%, rgba(255, 247, 214, 0.55), rgba(255, 247, 214, 0) 60%),
+        radial-gradient(800px 520px at 85% 30%, rgba(190, 210, 255, 0.60), rgba(190, 210, 255, 0) 55%),
+        radial-gradient(700px 520px at 55% 90%, rgba(230, 205, 255, 0.50), rgba(230, 205, 255, 0) 60%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,29 +25,33 @@ body {
     display: flex;
     flex-direction: row;
     gap: 24px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .card {
     background-color: #f2f1ed;
-    border-radius: 12px;
-    padding: 40px 32px;
+    border-radius: 4px;
+    padding: 16px 16px;
     width: 320px;
-    flex-shrink: 0;
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .card-title {
-    font-size: 32px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 500;
     color: #333;
     margin-bottom: 8px;
 }
 
 .card-price {
     font-size: 20px;
-    color: #666;
+    color: #956363;
     margin-bottom: 24px;
 }
 
@@ -62,14 +73,14 @@ body {
 .features-list li {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     font-size: 15px;
     color: #333;
 }
 
 .checkmark {
     color: #4a4a4a;
-    font-size: 18px;
+    font-size: 15px;
     margin-right: 12px;
     font-weight: bold;
 }
@@ -85,6 +96,24 @@ body {
     color: #333;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    margin-top: auto;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 24px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        flex: 0 0 auto;
+    }
 }
 
 .download-button:hover {
@@ -92,5 +121,47 @@ body {
 }
 
 .download-button:active {
-    background-color: #D8D6CE;
+    background-color: #762992;
 }
+
+.download-button.primary {
+   background-color: #762992;
+   color: #fff;
+   border: none; 
+   border-radius: 999px;
+   padding: 14px 24px;
+   font-size: 16px;
+   font-weight: 500;
+   cursor: pointer;
+   transition: background-color 0.2s ease;
+   margin-top: auto;
+}
+
+.download-button.primary:hover {    
+    background-color: #45155b;
+}
+
+.download-button.primary:active {
+    background-color: #451557;
+}
+
+.download-button.tertiary {
+    background-color:transparent;
+    color: #333;
+    border: 1px solid #333; 
+    border-radius: 999px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: auto;
+ }
+ 
+ .download-button.primary:hover {
+     background-color: #D8d6ce;
+ }
+ 
+ .download-button.primary:active {
+     background-color: #D8d6ce;
+ }
